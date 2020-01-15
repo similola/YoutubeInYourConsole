@@ -1,7 +1,7 @@
 package com.youtubeinconsole.client;
 
-import com.google.gson.Gson;
 import com.microsoft.azure.cognitiveservices.search.videosearch.implementation.BingVideoSearchAPIImpl;
+import com.microsoft.azure.cognitiveservices.search.videosearch.models.VideoObject;
 import com.microsoft.azure.cognitiveservices.search.videosearch.models.VideosModel;
 import com.youtubeinconsole.clientutils.YouTubeSearchUtil;
 
@@ -16,9 +16,18 @@ public class YoutubeSearch {
         } else {
             if (videoResults.value().size() > 0) {
 
-                //TODO: Change this code to display search results in a pretty way
-                Gson gson = new Gson();
-                System.out.println(String.format("JSON: %s: ", gson.toJson(videoResults)));
+                int videoIndex = 0;
+                for (VideoObject video : videoResults.value()) {
+                    if (video.contentUrl().contains("youtube")) {
+                        videoIndex++;
+                        System.out.println(String.format("---Video Search Result %d---", videoIndex));
+                        System.out.println(String.format("Video name: %s", video.name()));
+                        System.out.println(String.format("Number of views: %d", video.viewCount()));
+                        System.out.println(String.format("Video Link: %s", video.contentUrl()));
+
+                    }
+
+                }
 
             } else {
                 System.out.println("Couldn't find video results!");
