@@ -11,7 +11,7 @@ import java.io.IOException;
 
 public class YouTubeSearchUtil {
     public static BingVideoSearchAPIImpl getClient(final String subscriptionKey) {
-        return new BingVideoSearchAPIImpl ("https://api.cognitive.microsoft.com/bing/v7.0/",
+        return new BingVideoSearchAPIImpl("https://api.cognitive.microsoft.com/bing/v7.0/",
                 new ServiceClientCredentials() {
                     @Override
                     public void applyCredentialsFilter(OkHttpClient.Builder builder) {
@@ -19,15 +19,15 @@ public class YouTubeSearchUtil {
                                 new Interceptor() {
                                     @Override
                                     public Response intercept(Chain chain) throws IOException {
-                                            Request request = null;
-                                            Request original = chain.request();
-                                            Request.Builder requestBuilder = original.newBuilder()
-                                                    .addHeader("Ocp-Apim-Subscription-Key", subscriptionKey);
-                                            request = requestBuilder.build();
-                                            return chain.proceed(request);
+                                        Request request = null;
+                                        Request original = chain.request();
+                                        Request.Builder requestBuilder = original.newBuilder()
+                                                .addHeader("Ocp-Apim-Subscription-Key", subscriptionKey);
+                                        request = requestBuilder.build();
+                                        return chain.proceed(request);
                                     }
                                 });
-                }
-                    });
-}
+                    }
+                });
+    }
 }
