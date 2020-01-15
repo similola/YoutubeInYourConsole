@@ -38,11 +38,17 @@ public class YoutubeSearch {
     public static void main(String[] args) {
         String key = "";
         String searchTerm = "";
-        if (args.length > 0 && args.length == 2) {
+        if (args.length > 0 && args.length >= 2) {
             System.out.println("Extracting subscription key and search term");
             key = args[0];
             System.out.println(String.format("Subscription key found is: %s",key));
-            searchTerm = args[1];
+
+            //build search term
+            for(int i=1;i<args.length;i++) {
+                searchTerm += args[i] + " ";
+            }
+            //remove trailing whitespaces
+            searchTerm=searchTerm.trim();
             System.out.println(String.format("Search term found is: %s",searchTerm));
         } else {
             System.out.println("No command line arguments found. Please run with subscription key and search term as parameter");
