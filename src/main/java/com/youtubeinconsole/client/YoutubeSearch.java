@@ -1,3 +1,5 @@
+package com.youtubeinconsole.client;
+
 public class YoutubeSearch {
 
 
