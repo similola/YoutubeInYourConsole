@@ -39,13 +39,14 @@ public class YoutubeSearch {
         String key = "";
         String searchTerm = "";
         if (args.length > 0 && args.length == 2) {
-            //need to do better error handling later
             System.out.println("Extracting subscription key and search term");
             key = args[0];
+            System.out.println(String.format("Subscription key found is: %s",key));
             searchTerm = args[1];
+            System.out.println(String.format("Search term found is: %s",searchTerm));
         } else {
             System.out.println("No command line arguments found. Please run with subscription key and search term as parameter");
-            System.out.println("Run like this on Command Line: java YoutubeSearch <subscriptionkey> <searchterm> ");
+            System.out.println("Run like this on Command Line: gradlew run --args=\"<subscriptionkey> <searchterm>\"");
         }
 
         YoutubeSearch.SearchYoutube(key, searchTerm);
