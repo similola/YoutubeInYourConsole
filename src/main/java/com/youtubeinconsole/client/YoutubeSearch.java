@@ -16,6 +16,7 @@ public class YoutubeSearch {
         } else {
             if (videoResults.value().size() > 0) {
 
+                //TODO: Change this code to display search results in a pretty way
                 Gson gson = new Gson();
                 System.out.println(String.format("JSON: %s: ", gson.toJson(videoResults)));
 
