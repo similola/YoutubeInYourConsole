@@ -3,7 +3,6 @@ plugins {
     id 'application'
 }
 
-group 'org.youtubesearch'
 version '1.0'
 
 mainClassName = 'YoutubeSearch'
@@ -15,6 +14,6 @@ repositories {
 }
 
 dependencies {
-    //compile 'com.microsoft.azure.cognitiveservices:azure-cognitiveservices-videosearch:0.0.1-beta-SNAPSHOT'
+    implementation 'com.microsoft.azure.cognitiveservices:azure-cognitiveservices-videosearch:1.0.2'
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
