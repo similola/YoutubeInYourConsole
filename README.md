@@ -22,6 +22,7 @@ This project uses gradle for dependency management.
 >gradlew run --args="subscriptionkeyhere searchtermhere"
 
 ## On the TODO List
-* Display JSON results in a prettier way. Ideally we want to parse through the JSON and extract the youtube video title, number of views and link. We also want to restrict to only videos on YouTube (Bing searches for videos on all sites)
+* Display JSON results in a prettier way. Ideally we want to parse through the JSON and extract the youtube video title, number of views and link. We also want to restrict to only videos on YouTube (Bing searches for videos on all sites) *COMPLETED- see closed pull request*
+* Improve argument handling from command line *IN PROGRESS*
 * Add tests
 
