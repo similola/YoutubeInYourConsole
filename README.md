@@ -1,5 +1,5 @@
 # Youtube In Command Line
-
+Searching for youtube videos via command line application using AI developer services(Bing search API)
 ## Project Motivation
 
 I thought it would be cool to play around with some Microsoft Cognitive Services APIs.
